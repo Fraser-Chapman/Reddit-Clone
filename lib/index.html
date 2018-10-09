@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root">djkusufdkhsfl</div>
+    <p id = "example">example</p>
+    <script src="Datasource.js" type="text/javascript"></script>
+    <script src="DOM.js" type="text/javascript"></script>
+    <script>
+
+        const dataSource = new DataSource('https://jsonplaceholder.typicode.com');
+
+        const newPost = {
+            userID: 1,
+            title: "My Post",
+            body: "Hello World!"
+        }
+
+        dataSource.get('/posts', function (posts) {
+            console.log(posts);
+        });
+
+        const dom = new DOM('#root');
+        dom.render('<h1>Hello World</h1>');
+
+        //const domdomdom = new DOM('#example');
+        //domdomdom.render("<h2>Whaaa</h2>");
+        
+    </script>
+
+</body>
+
+</html>
